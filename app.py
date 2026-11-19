@@ -10,19 +10,19 @@ st.set_page_config(
     layout="wide"
 )
 # ==============================
-# PASTEL LAVENDER UI THEME
+# CALM SAGE GREEN UI THEME
 # ==============================
 
 st.markdown("""
 <style>
 
-/* Main background */
+/* Main application background */
 .stApp {
-    background: #F4F1FF;
-    color: #292747;
+    background-color: #F3F5F0;
+    color: #34423A;
 }
 
-/* Main content */
+/* Main content spacing */
 .block-container {
     padding-top: 2rem;
     padding-bottom: 3rem;
@@ -31,68 +31,130 @@ st.markdown("""
 
 /* Sidebar */
 section[data-testid="stSidebar"] {
-    background: #E6DEFF;
+    background-color: #E5EBE3;
+    border-right: 1px solid #D5DED3;
 }
 
 /* Headings */
 h1, h2, h3 {
-    color: #51418C !important;
+    color: #344E40 !important;
     font-weight: 700;
 }
 
-/* Normal text */
-p, label, span {
-    color: #393653;
+/* Text */
+.stApp p,
+.stApp label {
+    color: #46544A;
 }
 
-/* Buttons */
+/* General buttons */
 .stButton > button {
-    background: #7965C1;
-    color: white !important;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 20px;
-    font-weight: 600;
+    background-color: #647C6A !important;
+    color: #FFFFFF !important;
+    border: 1px solid #647C6A !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
     transition: 0.2s ease;
 }
 
+/* Button hover */
 .stButton > button:hover {
-    background: #5E4AA5;
-    color: white !important;
-    border: none;
+    background-color: #506958 !important;
+    border-color: #506958 !important;
 }
 
-/* Metrics */
+/* Tic-Tac-Toe board */
+div[data-testid="stHorizontalBlock"]
+div[data-testid="column"]
+div[data-testid="stButton"] button {
+
+    background-color: #FFFFFF !important;
+    color: #526D5A !important;
+
+    height: 82px !important;
+    width: 100% !important;
+
+    border: 2px solid #D1DDD1 !important;
+    border-radius: 13px !important;
+
+    font-size: 32px !important;
+    font-weight: 800 !important;
+
+    box-shadow: 0 2px 7px rgba(52, 66, 58, 0.06);
+}
+
+/* Board button text */
+div[data-testid="stHorizontalBlock"]
+div[data-testid="column"]
+div[data-testid="stButton"] button p {
+    color: #526D5A !important;
+    font-size: 32px !important;
+    font-weight: 800 !important;
+}
+
+/* Board hover */
+div[data-testid="stHorizontalBlock"]
+div[data-testid="column"]
+div[data-testid="stButton"] button:hover {
+    background-color: #EAF0E9 !important;
+    border-color: #829986 !important;
+}
+
+/* Metric cards */
 [data-testid="stMetric"] {
-    background: white;
+    background-color: #FFFFFF;
     padding: 20px;
-    border-radius: 15px;
-    border: 1px solid #E4DDF8;
-    box-shadow: 0 3px 12px rgba(80, 60, 130, 0.07);
+    border-radius: 14px;
+    border: 1px solid #DCE4DA;
+    box-shadow: 0 3px 10px rgba(52, 66, 58, 0.05);
 }
 
-/* Input boxes */
-.stSelectbox div[data-baseweb="select"] > div {
-    background: white;
-    border-radius: 10px;
-    border-color: #D8CEF3;
+/* Metric values */
+[data-testid="stMetricValue"] {
+    color: #405C49 !important;
+    font-weight: 700;
 }
 
-/* Cards and containers */
+/* Select boxes */
+div[data-baseweb="select"] > div {
+    background-color: #FFFFFF !important;
+    border-color: #D1DDD1 !important;
+    border-radius: 9px !important;
+}
+
+/* Input fields */
+.stTextInput input {
+    background-color: #FFFFFF !important;
+    color: #34423A !important;
+    border-color: #D1DDD1 !important;
+    border-radius: 9px !important;
+}
+
+/* Containers */
 div[data-testid="stVerticalBlockBorderWrapper"] {
-    background: white;
-    border-radius: 16px;
-    border-color: #E5DDF8;
+    background-color: #FFFFFF;
+    border: 1px solid #DCE4DA;
+    border-radius: 14px;
 }
 
-/* Horizontal dividers */
+/* Dividers */
 hr {
-    border-color: #DDD4F3;
+    border-color: #D8E0D6 !important;
 }
 
-/* Success and information messages */
+/* Alerts */
 div[data-testid="stAlert"] {
-    border-radius: 12px;
+    border-radius: 10px;
+}
+
+/* Sidebar headings and text */
+section[data-testid="stSidebar"] p {
+    color: #46564A;
+}
+
+/* Links */
+a {
+    color: #55745F !important;
 }
 
 </style>
