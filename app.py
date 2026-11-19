@@ -94,7 +94,7 @@ def train_agent(episodes, alpha, gamma, initial_epsilon):
                     q, state, action, 1.0,
                     alpha=alpha, gamma=gamma
                 )
-                episode_result = "Win"
+                episode_result = "Win" if player == "X" else "Loss"
                 break
 
             if not legal_actions(board):
