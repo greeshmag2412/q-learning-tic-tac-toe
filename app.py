@@ -265,10 +265,13 @@ def make_move(position):
     ai_move()
 
 def reset_game():
-
     st.session_state.board = [""] * 9
     st.session_state.game_over = False
     st.session_state.result = ""
+
+    # Let AI start if the human chooses O
+    if st.session_state.human == "O":
+        ai_move()
 
 # -------------------------------
 # SIDEBAR NAVIGATION
