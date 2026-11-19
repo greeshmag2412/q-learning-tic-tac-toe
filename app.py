@@ -83,15 +83,18 @@ div[data-testid="stButton"] button {
     box-shadow: 0 2px 7px rgba(52, 66, 58, 0.06);
 }
 
-/* Board button text */
-div[data-testid="stHorizontalBlock"]
-div[data-testid="column"]
-div[data-testid="stButton"] button p {
+/* Tic Tac Toe board - visible symbols */
+.st-key-ttt_board div[data-testid="stButton"] button {
     color: #FFFFFF !important;
-    font-size: 32px !important;
-    font-weight: 800 !important;
+    background-color: #526D5A !important;
+    min-height: 90px !important;
 }
 
+.st-key-ttt_board div[data-testid="stButton"] button p {
+    color: #FFFFFF !important;
+    font-size: 36px !important;
+    font-weight: 900 !important;
+}
 /* Board hover */
 div[data-testid="stHorizontalBlock"]
 div[data-testid="column"]
