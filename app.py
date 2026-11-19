@@ -9,7 +9,94 @@ st.set_page_config(
     page_icon="🧠",
     layout="wide"
 )
+# ==============================
+# PASTEL LAVENDER UI THEME
+# ==============================
 
+st.markdown("""
+<style>
+
+/* Main background */
+.stApp {
+    background: #F4F1FF;
+    color: #292747;
+}
+
+/* Main content */
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 1200px;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background: #E6DEFF;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #51418C !important;
+    font-weight: 700;
+}
+
+/* Normal text */
+p, label, span {
+    color: #393653;
+}
+
+/* Buttons */
+.stButton > button {
+    background: #7965C1;
+    color: white !important;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.stButton > button:hover {
+    background: #5E4AA5;
+    color: white !important;
+    border: none;
+}
+
+/* Metrics */
+[data-testid="stMetric"] {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #E4DDF8;
+    box-shadow: 0 3px 12px rgba(80, 60, 130, 0.07);
+}
+
+/* Input boxes */
+.stSelectbox div[data-baseweb="select"] > div {
+    background: white;
+    border-radius: 10px;
+    border-color: #D8CEF3;
+}
+
+/* Cards and containers */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: white;
+    border-radius: 16px;
+    border-color: #E5DDF8;
+}
+
+/* Horizontal dividers */
+hr {
+    border-color: #DDD4F3;
+}
+
+/* Success and information messages */
+div[data-testid="stAlert"] {
+    border-radius: 12px;
+}
+
+</style>
+""", unsafe_allow_html=True)
 # -------------------------------
 # Q-LEARNING ENVIRONMENT
 # -------------------------------
