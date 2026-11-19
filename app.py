@@ -126,7 +126,51 @@ def train_agent(episodes, alpha, gamma, initial_epsilon):
         epsilon = max(0.02, epsilon * 0.9995)
 
     return q, pd.DataFrame(records)
+def evaluate_agent(q, games=1000):
+    wins = 0
+    losses = 0
+    draws = 0
 
+    for game in range(games):
+        board = [""] * 9
+        ai_player = "X" if game % 2 == 0 else "O"
+        current_player = "X"
+
+        while True:
+            actions = legal_actions(board)
+
+            if not actions:
+                draws += 1
+                break
+
+            if current_player == ai_player:
+                state = get_state(board, current_player)
+                action = choose_action(q, state, actions, 0.0)
+            else:
+                action = random.choice(actions)
+
+            board[action] = current_player
+            result = winner(board)
+
+            if result:
+                if result == ai_player:
+                    wins += 1
+                else:
+                    losses += 1
+                break
+
+            if not legal_actions(board):
+                draws += 1
+                break
+
+            current_player = "O" if current_player == "X" else "X"
+
+    return {
+        "AI Wins": wins,
+        "AI Losses": losses,
+        "Draws": draws,
+        "Win Rate": wins / games * 100
+    }
 # -------------------------------
 # MODEL INITIALIZATION
 # -------------------------------
