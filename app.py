@@ -87,7 +87,7 @@ div[data-testid="stButton"] button {
 div[data-testid="stHorizontalBlock"]
 div[data-testid="column"]
 div[data-testid="stButton"] button p {
-    color: #526D5A !important;
+    color: #FFFFFF !important;
     font-size: 32px !important;
     font-weight: 800 !important;
 }
