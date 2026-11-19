@@ -48,7 +48,7 @@ def update_q(q, state, action, reward, next_state=None,
             for a in next_actions
         )
 
-    target = reward - gamma * future
+    target = reward + gamma * future
     q[(state, action)] = old + alpha * (target - old)
 
 def choose_action(q, state, actions, epsilon):
