@@ -523,27 +523,28 @@ elif page == "Play Against AI":
 
     st.divider()
 
-    st.subheader("Tic-Tac-Toe Board")
-
-    for row in range(3):
-        cols = st.columns(3)
-
-        for col in range(3):
-            index = row * 3 + col
-            value = st.session_state.board[index]
-
-            label = value if value else " "
-
-            cols[col].button(
-                label,
-                key=f"cell_{row}_{col}",
-                use_container_width=True,
-                disabled=(
-                    value != "" or st.session_state.game_over
-                ),
-                on_click=make_move,
-                args=(index,)
-            )
+    with st.container(key="ttt_board"):
+        st.subheader("Tic-Tac-Toe Board")
+    
+        for row in range(3):
+            cols = st.columns(3)
+    
+            for col in range(3):
+                index = row * 3 + col
+                value = st.session_state.board[index]
+    
+                label = value if value else " "
+    
+                cols[col].button(
+                    label,
+                    key=f"cell_{row}_{col}",
+                    use_container_width=True,
+                    disabled=(
+                        value != "" or st.session_state.game_over
+                    ),
+                    on_click=make_move,
+                    args=(index,)
+                )
 
     if st.session_state.game_over:
         if "Player Wins" in st.session_state.result:
